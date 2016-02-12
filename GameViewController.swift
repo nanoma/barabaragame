@@ -29,8 +29,6 @@ class GameViewController: UIViewController {
         
     }
     
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +36,47 @@ class GameViewController: UIViewController {
 
         positionX = [width/2, width/2, width/2]
         self.start()
+        }
+    
+    func up(){
+        for i in 0..<3{
+            //端に来たら動かす位置を逆にする
+            if positionX[i] > width || positionX[i] < 0{
+                dx[i] = dx[i] * (-1)
+            }
+            positionX[i] += dx[i]
+        }
+        imgView1.center.x = positionX[0]
+        imgView2.center.x = positionX[1]
+        imgView3.center.x = positionX[2]
+    }
+
+    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func stop(){
+        if timer.valid == true{ //もしタイマーが動いていたら
+            timer.invalidate() //止める
+            }
+        var highScore1: Int = defaults.integerForKey("score1")
+        var highScore2: Int = defaults.integerForKey("score2")
+        var highScore3: Int = defaults.integerForKey("score3")
+        
+        if score > highScore1 { //ランキング1位を記録したら
+            defaults.setInteger(score, forKey: "score1") //スコアを保存
+            defaults.setInteger(highScore1, forKey: "score2")
+            defaults.setInteger(highScore2, forKey: "score3")
+        } else if score > highScore2 {
+            defaults.setInteger(score, forKey: "score2")
+            defaults.setInteger(highScore2, forKey: "score3")
+        } else if score > highScore3{
+            defaults.setInteger(score, forKey: "score3")
+        }
+        defaults.synchronize()
         
         func up(){
             for i in 0..<3{
@@ -51,21 +90,23 @@ class GameViewController: UIViewController {
             imgView2.center.x = positionX[1]
             imgView3.center.x = positionX[2]
         }
-    }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func stop(){
-        if timer.valid == true{ //もしタイマーが動いていたら
-            timer.invalidate() //止める
+        for i in 0..<3{
+            score = score - abs(Int(width/2 - positionX[i]))*2
         }
+        resultLabel.text = "Score:" + String(score)
+        resultLabel.hidden = false
         
     }
     
+    @IBAction func retry(){
+        score = 1000 //scoreの値をリセット
+        positionX = [width/2, width/2, width/2] //画像をまんなかに戻す
+        self.start()
+    }
+    
+    @IBAction func toTop(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 
     /*

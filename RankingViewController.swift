@@ -9,9 +9,19 @@
 import UIKit
 
 class RankingViewController: UIViewController {
+    
+    @IBOutlet var rankingLabel1: UILabel!
+    @IBOutlet var rankingLabel2: UILabel!
+    @IBOutlet var rankingLabel3: UILabel!
+    
+    let defalts: NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rankingLabel1.text = String(defalts.integerForKey("score1"))
+        rankingLabel2.text = String(defalts.integerForKey("score2"))
+        rankingLabel3.text = String(defalts.integerForKey("score3"))
 
         // Do any additional setup after loading the view.
     }
@@ -19,6 +29,10 @@ class RankingViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func toTop(){
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 

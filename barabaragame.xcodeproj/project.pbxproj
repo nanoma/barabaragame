@@ -14,6 +14,10 @@
 		4D351B2D1C6D6D61003FD867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D351B2B1C6D6D61003FD867 /* LaunchScreen.storyboard */; };
 		4D351B381C6D6D61003FD867 /* barabaragameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D351B371C6D6D61003FD867 /* barabaragameTests.swift */; };
 		4D351B431C6D6D61003FD867 /* barabaragameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D351B421C6D6D61003FD867 /* barabaragameUITests.swift */; };
+		4D351B521C6D6ED1003FD867 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D351B501C6D6ED1003FD867 /* bar.png */; };
+		4D351B531C6D6ED1003FD867 /* tail.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D351B511C6D6ED1003FD867 /* tail.png */; };
+		4D351B551C6D70C1003FD867 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D351B541C6D70C1003FD867 /* GameViewController.swift */; };
+		4D351B571C6D70DE003FD867 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D351B561C6D70DE003FD867 /* RankingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		4D351B3E1C6D6D61003FD867 /* barabaragameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = barabaragameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D351B421C6D6D61003FD867 /* barabaragameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barabaragameUITests.swift; sourceTree = "<group>"; };
 		4D351B441C6D6D61003FD867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D351B501C6D6ED1003FD867 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar.png; sourceTree = "<group>"; };
+		4D351B511C6D6ED1003FD867 /* tail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tail.png; sourceTree = "<group>"; };
+		4D351B541C6D70C1003FD867 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../GameViewController.swift; sourceTree = "<group>"; };
+		4D351B561C6D70DE003FD867 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RankingViewController.swift; path = ../RankingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,8 @@
 		4D351B161C6D6D61003FD867 = {
 			isa = PBXGroup;
 			children = (
+				4D351B501C6D6ED1003FD867 /* bar.png */,
+				4D351B511C6D6ED1003FD867 /* tail.png */,
 				4D351B211C6D6D61003FD867 /* barabaragame */,
 				4D351B361C6D6D61003FD867 /* barabaragameTests */,
 				4D351B411C6D6D61003FD867 /* barabaragameUITests */,
@@ -99,6 +109,8 @@
 			children = (
 				4D351B221C6D6D61003FD867 /* AppDelegate.swift */,
 				4D351B241C6D6D61003FD867 /* ViewController.swift */,
+				4D351B541C6D70C1003FD867 /* GameViewController.swift */,
+				4D351B561C6D70DE003FD867 /* RankingViewController.swift */,
 				4D351B261C6D6D61003FD867 /* Main.storyboard */,
 				4D351B291C6D6D61003FD867 /* Assets.xcassets */,
 				4D351B2B1C6D6D61003FD867 /* LaunchScreen.storyboard */,
@@ -230,8 +242,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D351B2D1C6D6D61003FD867 /* LaunchScreen.storyboard in Resources */,
+				4D351B531C6D6ED1003FD867 /* tail.png in Resources */,
 				4D351B2A1C6D6D61003FD867 /* Assets.xcassets in Resources */,
 				4D351B281C6D6D61003FD867 /* Main.storyboard in Resources */,
+				4D351B521C6D6ED1003FD867 /* bar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D351B251C6D6D61003FD867 /* ViewController.swift in Sources */,
+				4D351B551C6D70C1003FD867 /* GameViewController.swift in Sources */,
 				4D351B231C6D6D61003FD867 /* AppDelegate.swift in Sources */,
+				4D351B571C6D70DE003FD867 /* RankingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
